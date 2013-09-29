@@ -10,16 +10,25 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="container">
-		<header>
-		<%= render 'layouts/navigation' %>
-		<%= render 'layouts/messages' %>
-		</header>
-			<main role="main">
-		<%= yield %>
-		</main>
+	<header class="navbar navar-fixed-top">
+		<nav class="navbar-inner">
+		<div class="container">
+			<%= render 'layouts/navigation' %>
+		</div>
+		</nav>
+	</header>
+	<main role="main">
+		<div class="content">
+			<div class="row">
+				<div class="span12">
+					<%= render 'layouts/messages' %>
+					<%= yield %>
+				</div>
+			</div>
 	<footer>
 	</footer>
 	</div>
+</div>
+</main>
 </body>
 </html>
