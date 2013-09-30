@@ -8,7 +8,9 @@ def create
 		if @contact.valid?
 			# TODO save data to GoogleDrive Spreadsheet
 			@contact.update_spreadsheet
+			Rails.logger.debug "DEBUG: params are #{params}"
 			# TODO send message
+			UserMailer.contact_email(@contact).deliver
 			flash[:notice] = "Message sent from #{@contact.name}."
 			redirect_to root_path
 		else
